@@ -18,7 +18,6 @@ import javax.validation.Valid;
  * Created by jiangyunxiong on 2018/5/21.
  */
 @Controller
-@RequestMapping("/login")
 public class LoginController {
 
     private static Logger log = LoggerFactory.getLogger(LoginController.class);
@@ -27,12 +26,12 @@ public class LoginController {
     UserService userService;
 
 
-    @RequestMapping("/to_login")
+    @RequestMapping("/")
     public String toLogin() {
         return "login";
     }
 
-    @RequestMapping("/do_login")
+    @RequestMapping("/login/do_login")
     @ResponseBody
     public Result<String> doLogin(HttpServletResponse response, @Valid LoginVo loginVo) {//加入JSR303参数校验
         log.info(loginVo.toString());
